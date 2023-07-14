@@ -10,6 +10,7 @@ const PokemonCard = ({ pokemon }) => {
   };
 
   const pokemonId = getPokemonIdFromUrl(url)
+  
 
   return (
     <Link to={`/${pokemonId}`}>

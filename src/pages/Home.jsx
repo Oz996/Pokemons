@@ -4,6 +4,7 @@ import PokemonCard from "../components/PokemonCard";
 import ReactPaginate from "react-paginate";
 import { useState } from "react";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
+import SearchBar from "../components/SearchBar";
 import Loader from "../utils/Loader/Loader";
 
 const Home = () => {
@@ -36,10 +37,11 @@ const Home = () => {
 
   return (
     <>
+      <SearchBar />
       <section className="flex gap-10 flex-wrap justify-center">
         {currentPageData?.map((pokemon) => (
-            <PokemonCard key={pokemon.name} pokemon={pokemon} />
-            ))}  
+          <PokemonCard key={pokemon.name} pokemon={pokemon} />
+        ))}
       </section>
       <ReactPaginate
         className="flex gap-6 justify-center mt-10 text-blue-400"
@@ -51,7 +53,6 @@ const Home = () => {
         previousLabel={<RiArrowLeftSLine className="text-black" size={25} />}
         nextLabel={<RiArrowRightSLine className="text-black" size={25} />}
       />
-    
     </>
   );
 };
