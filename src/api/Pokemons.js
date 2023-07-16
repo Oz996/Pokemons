@@ -11,3 +11,9 @@ export const getPokemon = (id) => {
     .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
     .then((res) => res.data);
 };
+
+export const getPokemonSpecies = (id) => {
+  return axios
+    .get(`https://pokeapi.co/api/v2/pokemon-species/${id}/`)
+    .then((res) => res.data);
+};
