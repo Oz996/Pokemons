@@ -14,7 +14,7 @@ const PokemonCard = ({ pokemon }) => {
 
   return (
     <Link to={`/${pokemonId}`}>
-      <article className="text-center border border-gray-300 rounded-lg p-10 shadow-lg shadow-gray-300  max-sm:p-2">
+      <article className="text-center border border-gray-300 rounded-lg p-10 shadow-lg shadow-gray-300 hover:bg-slate-200 ease-in duration-200 max-sm:p-2">
         <figure className="flex">
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonIdFromUrl(

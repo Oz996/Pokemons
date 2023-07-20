@@ -49,9 +49,9 @@ const Pokemon = () => {
   return (
     <article className="flex flex-col items-center justify-center mt-32">
       <div className="border border-neutral-300 p-10 rounded-2xl w-[32rem]">
-        <div className="flex gap-1 justify-center">
-          Type:
-          <b>{types}</b>
+        <div className="flex flex-row gap-1 justify-center">
+          <h2>Type:</h2>
+          <b className="flex gap-1">{types}</b>
         </div>
 
         {!altImage && (
@@ -109,10 +109,10 @@ const Pokemon = () => {
             <h2>{stats[5]}</h2>
           </div>
         )}
-        <div className="w-full h-2 bg-slate-500 rounded"/>
+        <div className="w-full h-2 bg-slate-500 rounded" />
         {speciesSuccess && speciesData && (
           <>
-            <div className="flex items-center gap-5 w-7/12 mx-auto mt-3">
+            <div className="flex items-center gap-5 justify-center mx-auto mt-3">
               <h2 className="items-center flex gap-1">
                 <PiSmileyDuotone size={20} className="text-yellow-600" />
                 {speciesData.base_happiness}
@@ -126,7 +126,7 @@ const Pokemon = () => {
                 {speciesData.growth_rate.name}
               </h2>
             </div>
-            <div className="grid mt-3 gap-3 w-8/12">
+            <div className="grid mt-5 gap-3 w-8/12">
               <div className="grid grid-cols-2">
                 <h2>Weight:</h2>
                 <b>{pokemon?.weight}</b>
@@ -139,10 +139,15 @@ const Pokemon = () => {
                 <h2>Experience:</h2>
                 <b>{pokemon?.base_experience}</b>
               </div>
-              <div className="grid grid-cols-2">
-                <h2>Evolves from:</h2>
-                <b>{speciesData?.evolves_from_species?.name}</b>
-              </div>
+              {speciesData?.evolves_from_species !== null ? (
+                <div className="grid grid-cols-2">
+                  <h2>Evolves from:</h2>
+                  <b>{speciesData?.evolves_from_species?.name}</b>
+                </div>
+              ) : (
+                ""
+              )}
+
               <div className="grid grid-cols-2">
                 <h2>Habitat:</h2>
                 <b>{speciesData?.habitat?.name}</b>

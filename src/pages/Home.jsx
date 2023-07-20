@@ -29,8 +29,6 @@ const Home = () => {
 
   if (isError) return <span>Error: {error}</span>;
 
-  if (!data) return null;
-
   const start = currentPage * ITEMS_PER_PAGE;
   const end = start + ITEMS_PER_PAGE;
   const currentPageData = data?.results.slice(start, end);
